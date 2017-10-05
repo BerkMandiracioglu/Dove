@@ -1,0 +1,41 @@
+
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">UGotTime?</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active" ><a href="#/loginPage">Login</a></li>
+
+            <li ><a href="#/signupPage">Signup</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <h2>Please enter your information below:</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="usrn">Username:</label>
+            <input type="text" class="form-control" ng-model="users.username"">
+        </div>
+        <div class="form-group">
+            <label for="psw">Password:</label>
+            <input type="password" class="form-control" ng-model="users.password">
+        </div>
+
+    </form>
+</div>
+
+
+
+<div class="container">
+
+<button type="button" class="btn btn-success" ng-click="logi()">Let's Go</button>
+
+    </div>
+

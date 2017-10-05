@@ -1,0 +1,47 @@
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">UGotTime?</a>
+        </div>
+        <ul class="nav navbar-nav">
+             <li ><a href="#/mainPage">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Inbox/Outbox <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li ><a href="#/inboxPage">Inbox</a></li>
+                    <li class="active"><a href="#/outboxPage">Outbox</a></li>
+                </ul>
+            </li>
+            <li ><a href="#/messagePage">Message</a></li>
+            <li ng-controller="logoutCtrl" ng-click="logo()"><a >Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<table id = "xd" class="table">
+    <thead>
+    <tr>
+        <th>date</th>
+        <th>receiver</th>
+        <th>message</th>
+    </tr>
+    </thead>
+    <tbody id="burasi">
+        <tr ng-repeat='message in userss'>
+            <td> {{message.date}} </td>
+            <td> {{message.receiver}} </td>
+             <td> {{message.messages}} </td>
+            </tr>
+        
+    </tbody>
+</table>
+
+
+
+
+

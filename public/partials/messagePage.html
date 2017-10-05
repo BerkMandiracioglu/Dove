@@ -1,0 +1,65 @@
+
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">UGotTime?</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ><a href="#/mainPage">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Inbox/Outbox <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li ><a href="#/inboxPage">Inbox</a></li>
+                    <li ><a href="#/outboxPage">Outbox</a></li>
+                </ul>
+            </li>
+            <li class="active"><a href="#/messagePage">Message</a></li>
+             <li ng-controller="logoutCtrl" ng-click="logo()"><a >Logout</a></li>
+
+        </ul>
+    </div>
+</nav>
+
+
+
+
+
+<div class="container">
+    <h2>Please enter your message:</h2>
+
+    <form>
+        <div class="form-group">
+            <label for="usrn">username:</label>
+            <input type="text" class="form-control" ng-model="messages.username">
+        </div>
+        <div class="form-group">
+            <label for="psw">message:</label>
+            <textarea class="form-control" rows="5" ng-model="messages.message"></textarea>
+        </div>
+
+    </form>
+</div>
+
+
+
+<div class="container">
+    <div ng-controller=" messageCtrl" class="col-sm-5">
+        <button type="button" class="btn btn-success" ng-click="messa()">Send</button>
+    </div>
+</div>
+
+<li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" >users <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+        <li ng-repeat="user in userss "><a >{{user.username}}</a></li>
+         </ul>
+
+ </li>
+<script>
+    function myFunction() {
+        var rightNow = new Date();
+        var res = rightNow.toISOString().slice(0, 10);
+        return res;
+    }
+</script>
+

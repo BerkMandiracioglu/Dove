@@ -1,0 +1,127 @@
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">UGotTime?</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ><a href="#/mainPageAdmin">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" >Inbox/Outbox <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li ><a href="#/inboxPageAdmin">Inbox</a></li>
+                    <li ><a href="#/outboxPageAdmin">Outbox</a></li>
+                </ul>
+            </li>
+            <li ><a href="#/messagePageAdmin">Message</a></li>
+            <li class="active"><a href="#/deleteAdmin">AdminPanel</a></li>
+            <li ><a href="#/logPageAdmin">LogPage</a></li>
+            <li ng-controller="logoutCtrl" ng-click="logo()"><a >Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<table id = "xd" class="table">
+    <thead>
+    <tr ng-init="sorttype=''">
+        <th> </th>
+        <th>
+        <a ng-click="sorttype='-username'">   
+        username
+        </a>
+        </th>
+
+        <th>
+        <a ng-click="sorttype='-password'">
+        password
+        </a>
+        </th>
+        <th>
+         <a ng-click="sorttype='-name'">   
+        name
+        </a>
+        </th>
+        <th>
+        <a ng-click="sorttype='-surname'">  
+        surname
+        </a>
+        </th>
+        <th>
+         <a ng-click="sorttype='-birthday'">      
+        birthday
+         </a>
+        </th>
+        <th>
+        <a ng-click="sorttype='-gender'">  
+        gender
+         </a>
+        </th>
+        <th>
+        <a ng-click="sorttype='-email'">      
+        email
+         </a>
+        </th>
+        <th>
+        <a ng-click="sorttype='-birthday'">      
+        adminStatus
+         </a>
+        </th>
+        <th>
+        <a ng-click="sorttype='-birthday'">      
+        token
+         </a>
+        </th>
+    </tr>
+    </thead>
+    <tbody id="burasi">
+        <tr ng-repeat="user in userss | orderBy:sorttype">
+         <td> <input type="CheckBox" ng-model="user.selected" value={{user.username}}> 
+            </input> 
+            </td >
+            <td ng-click="cli()" ng-controller = "myCtrl" > <div contenteditable ng-model="user.newusername" ng-controller = "myCtrl" ng-change="searchChanged()" >
+            {{user.username}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newpassword" ng-controller = "myCtrl1" ng-change="searchChanged()" >
+             {{user.password}}
+            </div> 
+            <div [innerHTML]="myVal | safeHtml"></div>
+            </td >
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newname" ng-controller = "myCtrl2" ng-change="searchChanged()" >
+             {{user.name}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newsurname" ng-controller = "myCtrl3" ng-change="searchChanged()" >
+             {{user.surname}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newdate" ng-controller = "myCtrl4" ng-change="searchChanged()" >
+             {{user.birthday}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newgender" ng-controller = "myCtrl5" ng-change="searchChanged()" >
+             {{user.gender}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newemail" ng-controller = "myCtrl6" ng-change="searchChanged()" >
+             {{user.email}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.newadmin" ng-controller = "myCtrl7" ng-change="searchChanged()" >
+             {{user.admin}}
+            </div> 
+            </td>
+            <td ng-click="cli()" ng-controller = "myCtrl"> <div contenteditable ng-model="user.token">
+             {{user.token}}
+            </div> 
+            </td>
+         </tr>   
+    </tbody>
+</table>
+
+
+
+        <button type="button" class="btn btn-success" ng-click="isSelected()" ng-controller="DeleteVideoCtrl">Delete</button>
+
+
